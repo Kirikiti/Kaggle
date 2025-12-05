@@ -27,8 +27,8 @@ class LogReg_ki():
         self.train_df = train_df
         self.submit_df = submit_df
         self.TARGET = target
-        self.CAT = train_df.select_dtypes(include=['object']).columns.tolist()
-        self.NUM = [col for col in train_df.select_dtypes(exclude=['object']).columns.tolist() if col != target]
+        self.CAT = train_df.select_dtypes(include=['object','category','bool']).columns.tolist()
+        self.NUM = [col for col in train_df.select_dtypes(exclude=['object','category','bool']).columns.tolist() if col != target]
         self.FEATURES_0 = [col for col in train_df.columns.tolist() if col != target]
         self.FEATURES_1 = [] #Multicolineal clean
         self.FEATURES_2 = []
@@ -97,6 +97,7 @@ class LogReg_ki():
         print('✅\n')
 
     def cleanFeatures1(self):
+        print(f'Looking for Multicollinearity')
         # Iterate through the VIF values and remove ONLY the highest one, 
         # and once it is removed, recalculate them to see if any other features need to be eliminated.
         X = self.submit_df_std[self.FEATURES_0]
