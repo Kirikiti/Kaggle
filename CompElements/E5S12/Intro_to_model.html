@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to the Model</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Introduction to the Model</h1>
+
+    <h2>1. Separating the Data Frame Using RANSAC</h2>
+    <table>
+        <tr>
+            <td style="width: 50%;"><img src="logistic_RANSAC.jpg" alt="RANSAC Image" style="width:100%;"></td>
+            <td style="width: 50%;">RANSAC (Random Sample Consensus) calculates inliers and outliers by randomly selecting a subset of data points to fit a model, and then evaluating how many points fit that model within a tolerance threshold. Points that meet this criterion are classified as <b>inliers</b>, while those that do not are considered <b>outliers</b>.</td>
+        </tr>
+    </table>
+
+    <h2>2. Creating Two Expert Models</h2>
+    <table>
+        <tr>
+            <td style="width: 50%;"><img src="two_Logistic_Experts_3D.jpg" alt="Expert Models Image" style="width:100%;"></td>
+            <td style="width: 50%;">1. <b>Inlier Expert</b> <i>(Green at Z=1)</i>: This model predicts the inliers.<br>2. <b>Outlier Expert</b> <i>(Red at Z=0)</i>: This model predicts the outliers.</td>
+        </tr>
+    </table>
+    
+    <h2>3. Gating Network</h2>
+    <table>
+        <tr>
+            <td style="width: 50%;"><img src="gating Line_3D.jpg" alt="Gating Network Image" style="width:100%;"></td>
+            <td style="width: 50%;"><img src="gating Line_2D.jpg" alt="Gating Network Image" style="width:100%;"></td>
+        </tr>
+        <tr>
+            <td colspan="2">Gating Network (Blue Line): It is the probabilistic selector that decides which expert is correct according to the data zone.<br>When the blue line is up (Z≈1), the system indicates: <b>"Higher probability that estimating with the green model is correct."</b> <br>When the blue line drops down (Z≈0), the system warns: <b>"Higher probability that estimating with the red model is correct."</b></td>
+        </tr>
+    </table>
+
+    <h2>4. Final Prediction</h2>
+    <table>
+        <tr>
+            <td style="width: 100%;">I weigh the result of the two expert models with the probability indicated by the Gating Network.</td>
+        </tr>
+    </table>
+
+</body>
+</html>
