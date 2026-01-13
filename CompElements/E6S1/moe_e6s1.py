@@ -247,6 +247,10 @@ def main():
 
         log(f"Fold {fold+1} Val Loss: {val_loss:.5f}")
 
+        # Guardar modelo k-fold
+        torch.save(model.state_dict(), f"moe_fold_{fold+1}.pth")
+        log(f"Modelo fold_{fold+1} guardado como moe_fold_{fold+1}.pth")
+
     # Guarda pérdidas de los folds
     with open("fold_losses.json", "w") as f:
         json.dump(fold_losses, f, indent=4)
