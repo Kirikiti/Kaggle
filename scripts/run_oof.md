@@ -16,7 +16,13 @@ pip install -r requirements_oof.txt
 # 🚀 2. Cómo ejecutarlo
 ## Solo train (solo genera OOF)
 ```bash
-python src/scripts/run_oof.py --train train.csv --target Precio
+python src/scripts/run_oof.py --train <ruta_al_csv_de_entrenamiento> --target <Nombre Variable dependiente>
+```
+Ejemplos válidos:
+```bash
+python src/scripts/run_oof.py --train data/mi_train.csv --target Precio
+python src/scripts/run_oof.py --train ./datasets/train_2024_v3.csv --target Precio
+python src/scripts/run_oof.py --train https://miweb.com/datos/train.csv --target Precio
 ```
 Esto generará:
 ```bash
@@ -25,7 +31,7 @@ oof_train.csv
 ## Train + Test (genera OOF + predicciones)
 
 ```bash
-python src/scripts/run_oof.py --train train.csv --target Precio --test test.csv
+python src/scripts/run_oof.py --train <ruta_al_csv_de_entrenamiento> --target <Nombre Variable dependiente> --test <ruta_al_csv_de_entrenamiento>
 ```
 Esto generará:
 ```bash
