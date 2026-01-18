@@ -2,6 +2,10 @@
 ```bash
 conda activate mi_entorno
 ```
+Si aún no está creado, se crea así:
+```bash
+conda create -n mi_entorno python=3.10
+```
 # ✅ 2. Clonas el Repo en tu máquina local
 ```bash
 git clone https://github.com/Kirikiti/Kaggle.git
