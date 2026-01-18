@@ -1,0 +1,36 @@
+classDiagram
+  class Expert {
+    net : Sequential
+    forward(x)
+  }
+  class MoELayer {
+    experts : ModuleList
+    num_experts : int
+    w_gating : Linear
+    forward(x)
+  }
+  class MoERegressor {
+    moe
+    out : Linear
+    forward(x)
+  }
+  class TabularDataset {
+    X
+    y
+  }
+  class TabularPreprocessor {
+    categorical_cols : NoneType
+    feature_cols : NoneType
+    scaler : NoneType, StandardScaler
+    target_col
+    te : NoneType, TargetEncoder
+    fit(df)
+    transform(df)
+    transform_to_arrays(df)
+  }
+  class TopKGate {
+    k : int
+    w_gating : Linear
+    forward(x)
+  }
+  MoELayer --* MoERegressor : moe
