@@ -1,14 +1,14 @@
 import torch
 import pandas as pd
-from model import MoERegressor                 # Ajusta el nombre del archivo donde está tu clase
-from preprocessing import TabularPreprocessor  # Ajusta el nombre del archivo donde está tu preprocesador
+from moe_e6s1_ONNX import MoERegressor                 # Ajusta el nombre del archivo donde está tu clase
+from moe_e6s1_ONNX import TabularPreprocessor  # Ajusta el nombre del archivo donde está tu preprocesador
 
 # ============================================================
 # CONFIGURACIÓN
 # ============================================================
 
-MODEL_PATH = "moe_model_final.pth"
-TRAIN_PATH = "Descargas/train.csv"
+MODEL_PATH = "moe_model_final_fONNX.pth"
+TRAIN_PATH = "/home/pi/Descargas/train.csv"
 TARGET_COL = "exam_score"
 ONNX_OUTPUT = "moe_model.onnx"
 
