@@ -5,7 +5,8 @@ classDiagram
   }
   class MoELayer {
     experts : ModuleList
-    gate
+    num_experts : int
+    w_gating : Linear
     forward(x)
   }
   class MoERegressor {
@@ -33,4 +34,3 @@ classDiagram
     forward(x)
   }
   MoELayer --* MoERegressor : moe
-  TopKGate --* MoELayer : gate
