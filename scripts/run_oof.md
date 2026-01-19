@@ -21,6 +21,10 @@ conda install git
 ```bash
 pip install -r requirements_oof.txt
 ```
+instalación más estable para condas
+```bash
+conda install --file requirements_oof.txt
+```
 # 🚀 2. Cómo ejecutarlo
 ## Solo train (solo genera OOF)
 ```bash
