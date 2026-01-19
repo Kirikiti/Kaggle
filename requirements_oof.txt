@@ -1,8 +1,16 @@
-numpy==1.26.4
-pandas==2.1.4
-scikit-learn==1.4.0
+numpy==1.23.5
+pandas==1.5.3
+scikit-learn==1.2.2
 catboost==1.2.3
+
+# TabNet compatible con CPUs antiguas
 pytorch-tabnet==4.1.0
-torch==2.1.2
-torchvision==0.16.2
-lightgbm
+torch==1.13.1
+torchvision==0.14.1
+
+# LightGBM sin AVX
+lightgbm --no-binary lightgbm
+
+joblib==1.3.2
+scipy==1.10.1
+tqdm==4.66.1
