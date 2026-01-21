@@ -173,6 +173,7 @@ Lista de lo que quiero hacer:
 - una **comparativa de todos estos modelos**,  
 - o una **pipeline optimizada** para Kaggle.
 
-model.compile(optimizer='adam',
-              loss='categorical_crossentropy',
-              metrics=['accuracy'])
+## 📖 Bibliografia HOG
+[towardsdatascience](https://towardsdatascience.com/histogram-of-oriented-gradients-hog-in-computer-vision-a2ec66f6e671/?utm_source=copilot.com)
+[geeksforgeeks](https://www.geeksforgeeks.org/computer-vision/histogram-of-oriented-gradients/)
+[scikit-image](https://scikit-image.org/docs/stable/auto_examples/features_detection/plot_hog.html)
