@@ -168,7 +168,7 @@ Para una competición de letras manuscritas:
 
 ---
 
-Si quieres, te preparo:
+Lista de lo que quiero hacer:
 - un **notebook completo** con HOG + SVM,  
 - una **comparativa de todos estos modelos**,  
 - o una **pipeline optimizada** para Kaggle.
